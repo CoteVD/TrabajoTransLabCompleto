@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/CoteVD/TransLab2.0/issues"
   },
-  "homepage": "https://github.com/CoteVD/TransLab2.0#readme"
+  "homepage": "https://github.com/CoteVD/TransLab2.0#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  }
 }
