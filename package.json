@@ -1,0 +1,22 @@
+{
+  "name": "translab",
+  "version": "0.0.1",
+  "description": "Mejora del proyecto TransLab",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoteVD/TransLab2.0.git"
+  },
+  "keywords": [
+    "translab"
+  ],
+  "author": "Cote Vargas Donoso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoteVD/TransLab2.0/issues"
+  },
+  "homepage": "https://github.com/CoteVD/TransLab2.0#readme"
+}
