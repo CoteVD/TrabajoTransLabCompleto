@@ -8,6 +8,34 @@ h1{
   margin-left: 55px;
 }
 
-img{
-  
+img {
+  margin-top: 130px;
+}
+
+#navbarBar {
+  background-color: #3E3F41;
+}
+
+.collapse {
+  background-color: white;
+}
+
+#pageContainer {
+  background-color:#DDDEE0; 
+}
+
+#profilePhotoContainer {
+  background-color: #E8910C;
+}
+
+#profilePhoto {
+  border-radius: 200px;
+  margin-left: 85px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#newCardNumber {
+  border: none;
+  background-color:#DDDEE0; 
 }
