@@ -1,4 +1,4 @@
-body{
+#authentication{
   background-color: #3E3F41;
 }
 
@@ -20,7 +20,7 @@ img {
   background-color: white;
 }
 
-#pageContainer {
+#pageContent {
   background-color:#DDDEE0; 
 }
 
@@ -30,12 +30,32 @@ img {
 
 #profilePhoto {
   border-radius: 200px;
-  margin-left: 85px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
-#newCardNumber {
+#newCardNumber, #cardNumber, #cardNumberCalculator {
   border: none;
   background-color:#DDDEE0; 
+}
+
+select {
+  width: 100%;
+}
+
+#title, #cost, #final {
+  background-color: #3E3F41;
+  color: white;
+}
+
+#askedBalance, #askedCost, #finalBalance {
+  background-color: #E8910C;
+  color: white;
+  font-weight: 700;
+}
+
+#showBalance {
+  width: 100%;
+}
+
+#calculate {
+  width: 100%;
 }

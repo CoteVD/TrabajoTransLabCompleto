@@ -37,13 +37,10 @@
           <input type="text" class="form-control" id="password" placeholder="Contraseña">
         </div>
       </form>
-      <button type="button" class="btn btn-warning">INICIAR SESIÓN</button>
+      <button type="button" class="btn btn-warning mb-5">INICIAR SESIÓN</button>
     </div>
-    <p class="text-light mt-2">¿Olvidaste tu Contraseña?</p>
-    <p class="text-light">¿NO TIENES CUENTA?</p>
-    <p class="text-warning">REGÍSTRATE</p>
   </div>
-  <div class="container p-0" id="profile">
+  <div class="container p-0" id="navbarID">
     <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbarBar">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -70,60 +67,237 @@
         </ul>
       </div>
     </nav>
-    <div class="container-fluid p-0" id="pageContainer">
-      <div class="container" id="buttons">
-        <div class="row">
-          <div class="col-9">
-            <button type="button" class="btn text-light btn-warning">VER SALDO</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9">
-            <button type="button" class="btn text-light btn-warning">CALCULAR TARIFA</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9">
-            <button type="button" class="btn text-light btn-warning">PERFIL</button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-9">
-            <button type="button" class="btn text-light btn-warning">PREGUNTAS FRECUENTES</button>
-          </div>
+  </div>
+  <div class="container-fluid p-0" id="pageContent">
+    <div class="container" id="buttons">
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn text-light btn-warning">VER SALDO</button>
         </div>
       </div>
-      <div class="container p-0" id="user">
-        <div class="container justify-content-center" id="profilePhotoContainer">
-          <img src="src/img/fotoprofile.png" class="img-fluid" width="150 px" alt="foto" id="profilePhoto">
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn text-light btn-warning">CALCULAR TARIFA</button>
         </div>
-        <div class="container" id="cards">
-          <div class="row justify-content-center mt-5 mb-5">
-            <div class="col-10 bg-white">
-              <p class="text-center m-0 p-2" id="email">EJEMPLO@gmail.com</p>
+      </div>
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn text-light btn-warning">PERFIL</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-9">
+          <button type="button" class="btn text-light btn-warning">PREGUNTAS FRECUENTES</button>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="user">
+      <div class="row justify-content-center" id="profilePhotoContainer">
+        <div class="col-6">
+          <img src="src/img/fotoprofile.png" class="img-fluid mt-3 mb-3" alt="foto" id="profilePhoto">
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-10 bg-white">
+          <p class="text-center m-0 p-2" id="email"></p>
+        </div>
+      </div>
+      <div class="row ml-4">
+        <input type="text" id="newCardNumber" placeholder="Número de tarjeta">
+      </div>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <button type="button" class="btn col-12 text-light btn-warning" onclick="">AGREGAR TARJETA</button>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="newCards">
+      </div>
+    </div>
+    <div class="container" id="FAQ">
+      <div class="row justify-content-center p-5 bg-warning">
+        <div class="col-8">
+          <h5 class="text-light">PREGUNTAS FRECUENTES</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11">
+          <div id="accordion" role="tablist" class="mt-5">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Pregunta #1
+                  </a>
+                </p>
+              </div>
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row ml-4">
-            <input type="text" id="newCardNumber" placeholder="Número de tarjeta">
-          </div>            
-          <hr>
-          <div class="row justify-content-center">
-            <div class="col-10">
-              <button type="button" class="btn col-12 text-light btn-warning">AGREGAR TARJETA</button>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingTwo">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Pregunta #2
+                  </a>
+                </p>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique unde ab molestias officia veritatis quis reiciendis velit.
+                  Enim, quasi dolor!
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingThree">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Pregunta #3
+                  </a>
+                </p>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFour">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Pregunta #4
+                  </a>
+                </p>
+              </div>
+              <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFive">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Pregunta #5
+                  </a>
+                </p>
+              </div>
+              <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="container" id="balance">
+      <div class="row">
+        <div class="col-8">
+          <input type="text" id="cardNumber" class="mt-5" placeholder="Número de tarjeta">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <select class="mt-4" name="Tarjetas" id="cards">
+            <option value="0">Seleccione tarjeta:</option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-7">
+          <button type="button" class="btn text-light btn-warning mt-5 mb-5" id="showBalance">VER SALDO</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mt-5 mb-0" id="title">SALDO TOTAL</p>
+            <h1 class="text-center ml-0 mb-5 p-5" id="askedBalance">$25.000</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="balanceCalculator">
+      <div class="row">
+        <div class="col-8">
+          <input type="text" id="cardNumberCalculator" class="mt-5" placeholder="Número de tarjeta">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <label for="Tarifa" class="mt-5">Tarifa:</label>
+          <select name="Tarifa" id="rate">
+            <option value="0">Seleccione tarjeta:</option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="Tarjetas" class="mt-5">Tarjeta:</label>
+          <select name="Tarjetas" id="cardsBalance">
+            <option value="0">Seleccione tarjeta:</option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-7">
+          <button type="button" class="btn text-light btn-warning mt-5 mb-5" id="calculate">CALCULAR</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mt-5 mb-0" id="cost">COSTO PASAJE</p>
+            <h1 class="text-center ml-0 p-5" id="askedCost">$25.000</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="div">
+              <p class="text-center mb-0 mt-4" id="final">SALDO FINAL</p>
+              <h1 class="text-center ml-0 mb-5 p-5" id="finalBalance">$25.000</h1>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="src/js/app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="src/js/app.js"></script>
 </body>
 
 </html>
