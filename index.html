@@ -230,7 +230,7 @@
         <div class="col-10">
           <div class="div">
             <p class="text-center mt-5 mb-0" id="title">SALDO TOTAL</p>
-            <h1 class="text-center ml-0 mb-5 p-5" id="askedBalance">$25.000</h1>
+            <h1 class="text-center ml-0 mb-5 p-5" id="askedBalance"></h1>
           </div>
         </div>
       </div>
@@ -245,13 +245,11 @@
       <div class="row">
         <div class="col">
           <label for="Tarifa" class="mt-5">Tarifa:</label>
-          <select name="Tarifa" id="rate">
-            <option value="0">Seleccione tarjeta:</option>
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
-            <option value="5"></option>
+          <select name="Tarifa" id="rate" onclick="selectedRate()">
+            <option value="">Seleccione tarifa:</option>
+            <option value="760">Horario Alto</option>
+            <option value="680">Horario Medio</option>
+            <option value="630">Horario Bajo</option>
           </select>
         </div>
         <div class="col">
@@ -268,25 +266,25 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-7">
-          <button type="button" class="btn text-light btn-warning mt-5 mb-5" id="calculate">CALCULAR</button>
+          <button type="button" class="btn text-light btn-warning mt-5 mb-5" id="calculate" onclick="bipCalculator()">CALCULAR</button>
         </div>
       </div>
       <div class="row justify-content-center">
         <div class="col-10">
           <div class="div">
             <p class="text-center mt-5 mb-0" id="cost">COSTO PASAJE</p>
-            <h1 class="text-center ml-0 p-5" id="askedCost">$25.000</h1>
+            <h1 class="text-center ml-0 p-5" id="askedCost"></h1>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
-          <div class="col-10">
-            <div class="div">
-              <p class="text-center mb-0 mt-4" id="final">SALDO FINAL</p>
-              <h1 class="text-center ml-0 mb-5 p-5" id="finalBalance">$25.000</h1>
-            </div>
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mb-0 mt-4" id="final">SALDO FINAL</p>
+            <h1 class="text-center ml-0 mb-5 p-5" id="finalBalance"></h1>
           </div>
         </div>
+      </div>
     </div>
   </div>
 
