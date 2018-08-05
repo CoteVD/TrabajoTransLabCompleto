@@ -17,7 +17,7 @@ window.onload = () => {
 };
 
 //Función para registrarse en la aplicación
-function signUp() {
+signUp = () => {
   const emailValue = email.value;
   const passwordValue = password.value;
   firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
@@ -38,7 +38,7 @@ function signUp() {
 }
 
 //Función para entrar a la aplicación por usuarios registrados
-function signIn() {
+signIn = () => {
   const emailValue = email.value;
   const passwordValue = password.value;
   firebase.auth().signInWithEmailAndPassword(emailValue, passwordValue)
@@ -56,7 +56,7 @@ function signIn() {
 }
 
 //Función para salir de la aplicación
-function logOut() {
+logOut = () => {
   firebase.auth().signOut()
     .then(() => {
       authentication.style.display = "block";
