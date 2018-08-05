@@ -8,24 +8,17 @@ var config = {
 };
 firebase.initializeApp(config);
 
-goUser = () => {
-  userProfile.style.display = 'block';
-  buttons.style.display = 'none';
-  FAQ.style.display = 'none';
-  balance.style.display = 'none';
-  balanceCalculator.style.display = 'none';
-  //Datos del user para imprimir el email y mostrar la foto
-  const user = firebase.auth().currentUser;
-  let email, photoUrl, uid;
+//Datos del user para imprimir el email y mostrar la foto
+const user = firebase.auth().currentUser;
+let email, photoUrl, uid;
 
-  if (user != null) {
-    email = user.email;
-    photoUrl = user.photoURL;
-    uid = user.uid;
-  }
-  //Se imprime en la página
-  document.getElementById('userEmail').innerHTML = email;
+if (user != null) {
+  email = user.email;
+  photoUrl = user.photoURL;
+  uid = user.uid;
 }
+//Se imprime en la página
+document.getElementById('userEmail').innerHTML = email;
 
 //Se guardan las tarjetas en Firebase y se imprimen en la página
 //Dandole un ID a las tarjetas a través del órden de inscripción
