@@ -1,5 +1,5 @@
 //Haciendo el fetch a la url
-fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + cardID)
+fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=123456')
   .then(response => response.json())
   .then(bipJSON => {
     bip(bipJSON);
@@ -10,6 +10,14 @@ fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + cardID)
     console.error('Tipo de error: ' + error.stack);
   });
 
+goBalance = () => {
+  userProfile.style.display = 'none';
+  buttons.style.display = 'none';
+  FAQ.style.display = 'none';
+  balance.style.display = 'block';
+  balanceCalculator.style.display = 'none';
+}
+
 //Sacando la información relevante del JSON e imprimiendola en la página
 const bip = (bipJSON) => {
   askedBalance.innerHTML = '';
@@ -17,6 +25,14 @@ const bip = (bipJSON) => {
     askedBalance.innerHTML = `
   ${bipJSON['saldoTarjeta']}`
   }
+}
+
+goBalanceCalculator = () => {
+  userProfile.style.display = 'none';
+  buttons.style.display = 'none';
+  FAQ.style.display = 'none';
+  balance.style.display = 'none';
+  balanceCalculator.style.display = 'block';
 }
 
 //Seleccionando la tarifa
