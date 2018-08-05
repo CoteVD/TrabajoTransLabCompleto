@@ -14,12 +14,14 @@ window.onload = () => {
       pageContent.style.display = "none";
     }
   });
-};
+  readCards();
+}
 
 //Función para registrarse en la aplicación
 signUp = () => {
   const emailValue = email.value;
   const passwordValue = password.value;
+  if(passwordValue.length <= 8){
   firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
     .then(() => {
       alert('Usuario registrado con éxito.');
@@ -35,6 +37,9 @@ signUp = () => {
         alert('Su cuenta ha sido desactivada.')
       }
     });
+  } else {
+    alert('La clave tiene un máximo de 8 caracteres')
+  }
 }
 
 //Función para entrar a la aplicación por usuarios registrados

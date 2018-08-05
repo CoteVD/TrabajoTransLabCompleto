@@ -27,13 +27,14 @@ goUser = () => {
   document.getElementById('userEmail').innerHTML = email;
 }
 
-//Se guardan las tarjetas
+//Se guardan las tarjetas en Firebase y se imprimen en la página
+//Dandole un ID a las tarjetas a través del órden de inscripción
 let d = new Date();
 let t = d.getTime();
 let counter = t;
 
 document.getElementById('form').addEventListener('submit', (e) => {
-  const newNumber = document.getElementById('newCardNumber').value;
+  let newNumber = document.getElementById('newCardNumber').value;
   e.preventDefault();
   createNumber(newNumber);
   form.reset();
@@ -41,7 +42,7 @@ document.getElementById('form').addEventListener('submit', (e) => {
 
 createNumber = (newNumber) => {
   counter += 1;
-  const number = {
+  let number = {
     id: counter,
     number: newNumber
   }
@@ -50,32 +51,15 @@ createNumber = (newNumber) => {
   document.getElementById('newCards').innerHTML = '';
   readCards();
 }
-/*newCard = () => {
-  firebase.database().ref('tarjetas')
-    .on('child_added', (newCardNumber) => {
-      const newCardDiv = document.createElement('div')
-      newCards.appendChild(newCardDiv)
-      newCardDiv.innerHTML +=
-        `<div class="row">
-          <div style = "background-color: #white" class="m-2">          
-            <p class="p-3">${newCardNumber.val().text}</p>          
-          </div>
-        </div>`;
-    });
-}
-window.onload = () => {
-  newData = document.getElementById('newCardNumber');
-  newData.addEventListener('submit', sendNew, false);
 
-  newRef = firebase.database().ref().child('tarjetas');
-}
-
-let newData;
-let newRef;
-
-newCard = (event) => {
-  event.preventDefault();
-  newRef.push({
-    tarjetas: event.target.newCardNumber.value
+readCards = () => {
+  let number = firebase.database().ref('tarjetas/');
+  number.on('child_added', function (data) {
+    let numberValue = data.val();
+    document.getElementById('newCards').innerHTML += `
+    <div class="col-10 bg-white mt-2 mb-2">
+    <p class="text-center mt-2 mb-2">${numberValue.number}</p>
+    </div>
+    `
   })
-}*/
+}

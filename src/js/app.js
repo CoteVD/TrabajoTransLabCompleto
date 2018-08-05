@@ -1,5 +1,5 @@
 //Haciendo el fetch a la url
-fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=75641459')
+fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + cardID)
   .then(response => response.json())
   .then(bipJSON => {
     bip(bipJSON);
@@ -29,12 +29,11 @@ selectedRate = () => {
 //Calculando el balance final(no funcional)
 const bipCalculator = (bipJSON) => {
   const cardBalance = bipJSON['saldoTarjeta'];
-    /*
-    let interger = parseInt(cardBalance, 10)
-    console.log(interger)
-  }*/
+  /*
+  let interger = parseInt(cardBalance, 10)
+  console.log(interger)
+}*/
   const passajeCost = askedCost.value;
   const result = parseInt(cardBalance - passajeCost);
   document.getElementById('finalBalance').innerHTML = '$' + result
 }
-
