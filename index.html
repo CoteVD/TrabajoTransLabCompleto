@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="stylesheet" href="src/css/style.css">
+  
 </head>
 
 <body>
@@ -31,67 +32,68 @@
     <div class="container">
       <form>
         <div class="form-group">
-          <input type="text" class="form-control" id="name" placeholder="Nombre">
+          <input type="email" class="form-control" id="email" placeholder="Email">
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" id="password" placeholder="Contraseña">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña">
         </div>
       </form>
-      <button type="button" class="btn btn-warning mb-5">INICIAR SESIÓN</button>
+      <button type="button" class="btn btn-warning mb-5" onclick="signIn()">INICIAR SESIÓN</button>
+      <button type="button" class="btn btn-warning mb-5" onclick="signUp()">REGISTRARSE</button>
     </div>
   </div>
-  <div class="container p-0" id="navbarID">
+  <div class="container p-0" id="navbarID" style="display: none">
     <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbarBar">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">TRANS-LAB</a>
+      <a class="navbar-brand">TRANS-LAB</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Ver Saldo</a>
+            <a class="nav-link text-dark" href="#" onclick="goBalance()">Ver Saldo</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Calcular Tarifa</a>
+            <a class="nav-link text-dark" href="#" onclick="goBalanceCalculator()">Calcular Tarifa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Perfil</a>
+            <a class="nav-link text-dark" href="#" onclick="goUser()">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Preguntas Frecuentes</a>
+            <a class="nav-link text-dark" href="#" onclick="goFAQ()">Preguntas Frecuentes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="#">Home</a>
+            <a class="nav-link text-dark" href="#" onclick="goButtons()">Home</a>
           </li>
         </ul>
       </div>
     </nav>
   </div>
-  <div class="container-fluid p-0" id="pageContent">
-    <div class="container" id="buttons">
+  <div class="container-fluid p-0" id="pageContent" style="display: none">
+    <div class="container" id="buttons" style="display: none">
       <div class="row">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning">VER SALDO</button>
+          <button type="button" class="btn text-light btn-warning" onclick="goBalance()">VER SALDO</button>
         </div>
       </div>
       <div class="row">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning">CALCULAR TARIFA</button>
+          <button type="button" class="btn text-light btn-warning" onclick="goBalanceCalculator()">CALCULAR TARIFA</button>
         </div>
       </div>
       <div class="row">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning">PERFIL</button>
+          <button type="button" class="btn text-light btn-warning" onclick="goUser()">PERFIL</button>
         </div>
       </div>
       <div class="row">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning">PREGUNTAS FRECUENTES</button>
+          <button type="button" class="btn text-light btn-warning" onclick="goFAQ()">PREGUNTAS FRECUENTES</button>
         </div>
       </div>
     </div>
-    <div class="container" id="user">
+    <div class="container" id="user" style="display: none">
       <div class="row justify-content-center" id="profilePhotoContainer">
         <div class="col-6">
           <img src="src/img/fotoprofile.png" class="img-fluid mt-3 mb-3" alt="foto" id="profilePhoto">
@@ -99,7 +101,7 @@
       </div>
       <div class="row justify-content-center mt-5 mb-5">
         <div class="col-10 bg-white">
-          <p class="text-center m-0 p-2" id="email"></p>
+          <p class="text-center m-0 p-2" id="userEmail"></p>
         </div>
       </div>
       <div class="row ml-4">
@@ -114,7 +116,7 @@
       <div class="row justify-content-center" id="newCards">
       </div>
     </div>
-    <div class="container" id="FAQ">
+    <div class="container" id="FAQ" style="display: none">
       <div class="row justify-content-center p-5 bg-warning">
         <div class="col-8">
           <h5 class="text-light">PREGUNTAS FRECUENTES</h5>
@@ -202,7 +204,7 @@
         </div>
       </div>
     </div>
-    <div class="container" id="balance">
+    <div class="container" id="balance" style="display: none">
       <div class="row">
         <div class="col-8">
           <input type="text" id="cardNumber" class="mt-5" placeholder="Número de tarjeta">
@@ -235,7 +237,7 @@
         </div>
       </div>
     </div>
-    <div class="container" id="balanceCalculator">
+    <div class="container" id="balanceCalculator" style="display: none">
       <div class="row">
         <div class="col-8">
           <input type="text" id="cardNumberCalculator" class="mt-5" placeholder="Número de tarjeta">
@@ -288,6 +290,19 @@
     </div>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDnft4d70ye6YDJoTOqbXXygkv-Qaw_zBk",
+      authDomain: "translab-6bb57.firebaseapp.com",
+      databaseURL: "https://translab-6bb57.firebaseio.com",
+      projectId: "translab-6bb57",
+      storageBucket: "translab-6bb57.appspot.com",
+      messagingSenderId: "539292904808"
+    };
+    firebase.initializeApp(config);
+  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -295,6 +310,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="src/js/login.js"></script>
   <script src="src/js/app.js"></script>
 </body>
 
