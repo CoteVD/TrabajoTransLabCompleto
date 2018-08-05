@@ -1,6 +1,16 @@
 #authentication{
   background-color: #3E3F41;
-  height: 100%;
+  width: 100%;
+}
+
+.btn{
+  width:100%;
+  margin-top: 60px;
+  margin-bottom: 125px;
+}
+
+#email, #password {
+  padding: 30px;
 }
 
 h1{
@@ -22,7 +32,7 @@ img {
 }
 
 #pageContent {
-  background-color:#DDDEE0; 
+  background-color:#DDDEE0;
 }
 
 #profilePhotoContainer {

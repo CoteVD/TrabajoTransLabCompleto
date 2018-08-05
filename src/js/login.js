@@ -21,22 +21,22 @@ window.onload = () => {
 signUp = () => {
   const emailValue = email.value;
   const passwordValue = password.value;
-  if(passwordValue.length <= 8){
-  firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
-    .then(() => {
-      alert('Usuario registrado con éxito.');
-    })
-    .catch((error) => {
-      if (error.code === 'auth/invalid-email') {
-        alert('Email inválido. Ejemplo: Ejemplo@mail.com.')
-      } if (error.code === 'auth/weak-password') {
-        alert('La clave debe tener al menos 6 carácteres de largo.');
-      } if (error.code === 'auth/network-request-failed') {
-        alert('No hay conexión a internet.')
-      } if (error.code === 'auth/user-disabled') {
-        alert('Su cuenta ha sido desactivada.')
-      }
-    });
+  if (passwordValue.length <= 8) {
+    firebase.auth().createUserWithEmailAndPassword(emailValue, passwordValue)
+      .then(() => {
+        alert('Usuario registrado con éxito.');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/invalid-email') {
+          alert('Email inválido. Ejemplo: Ejemplo@mail.com.')
+        } if (error.code === 'auth/weak-password') {
+          alert('La clave debe tener al menos 6 carácteres de largo.');
+        } if (error.code === 'auth/network-request-failed') {
+          alert('No hay conexión a internet.')
+        } if (error.code === 'auth/user-disabled') {
+          alert('Su cuenta ha sido desactivada.')
+        }
+      });
   } else {
     alert('La clave tiene un máximo de 8 caracteres')
   }

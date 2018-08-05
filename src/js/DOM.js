@@ -1,11 +1,3 @@
-goUser = () => {
-  userProfile.style.display = 'block';
-  buttons.style.display = 'none';
-  FAQ.style.display = 'none';
-  balance.style.display = 'none';
-  balanceCalculator.style.display = 'none';
-}
-
 goBalance = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'none';
