@@ -13,7 +13,7 @@ showBalance = () => {
   let numberSelect = document.getElementById('cards').value;
 
   //Haciendo el fetch a la tarjeta ingresada
-  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
+  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
@@ -67,7 +67,7 @@ bipCalculator = () => {
   let numberSelect = document.getElementById('cardsBalance').value;
   let rate = document.getElementById('rate').value;
   //Haciendo el fetch a la tarjeta ingresada para sacar el saldo
-  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
+  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
