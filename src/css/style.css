@@ -9,6 +9,10 @@
   margin-bottom: 125px;
 }
 
+#buttons{
+  height:772px;
+}
+
 #userProfile {
   height: 772px;
 }
@@ -35,12 +39,8 @@
   margin-bottom: 20px;
 }
 
-#first{
+#firstBtn{
   margin-top:170px;
-}
-
-#last{
-  margin-bottom:252px;
 }
 
 #finalBalance{
