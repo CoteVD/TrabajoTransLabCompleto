@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TransLab</title>
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="src/css/style.css">
+
+</head>
+
+<body>
+  <!--Página de login con usuario y contraseña-->
+  <div class="container p-0" id="authentication">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-6">
+          <img src="src/img/imagen.png" class="img-fluid text-center mb-2" alt="logo">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <h1 class="font-weight-bold ml-0 mb-5">TRANS-LAB</h1>
+      </div>
+    </div>
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-6">
+          <button type="button" class="btn btn-warning p-4" id="ini" onclick="signIn()">INICIAR SESIÓN</button>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-warning p-4" id="reg" onclick="signUp()">REGISTRARSE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Página del navbar-->
+  <div class="container p-0" id="navbarID" style="display: none">
+    <nav class="navbar navbar-expand-lg navbar-dark p-0" id="navbarBar">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand text-white">TRANS-LAB</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="goBalance()">
+              <i class="fas fa-dollar-sign p-3"></i>Ver Saldo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="goBalanceCalculator()">
+              <i class="fas fa-calculator p-3"></i>Calcular Tarifa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="goUser()">
+              <i class="fas fa-user-alt p-3"></i>Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="goFAQ()">
+              <i class="fas fa-question p-3"></i>Preguntas Frecuentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="goButtons()">
+              <i class="fas fa-arrow-right p-3"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="#" onclick="logOut()">
+              <i class="fas fa-sign-out-alt p-3"></i>Salir</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!--Página base donde se imprimiran todos las demás páginas-->
+  <div class="container-fluid p-0" id="pageContent" style="display: none">
+
+    <!--Página del Home-->
+    <div class="container" id="buttons" style="display: none">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <button type="button" class="btn home text-light btn-warning" id="firstBtn" onclick="goBalance()">VER SALDO</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <button type="button" class="btn home text-light btn-warning" onclick="goBalanceCalculator()">CALCULAR TARIFA</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <button type="button" class="btn home text-light btn-warning" onclick="goUser()">PERFIL</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <button type="button" class="btn home text-light btn-warning" onclick="goFAQ()">PREGUNTAS FRECUENTES</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <button type="button" class="btn home text-light btn-warning" onclick="logOut()">SALIR</button>
+        </div>
+      </div>
+    </div>
+
+    <!--Página del Profile-->
+    <div class="container" id="userProfile" style="display: none">
+      <div class="row justify-content-center" id="profilePhotoContainer">
+        <div class="col-6">
+          <img src="src/img/fotoprofile.png" class="img-fluid mt-3 mb-3" alt="foto" id="profilePhoto">
+        </div>
+      </div>
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-10 bg-white">
+          <p class="text-center m-0 p-2" id="userEmail"></p>
+        </div>
+      </div>
+      <form id="form">
+        <div class="form-group">
+          <div class="row ml-4">
+            <input type="text" class="form-control" id="newCardNumber" placeholder="Número de tarjeta">
+          </div>
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <button type="submit" class="btn col-12 text-light mb-3 btn-warning" id="addNewCard">AGREGAR TARJETA</button>
+          </div>
+        </div>
+      </form>
+      <div class="row justify-content-center" id="newCards"></div>
+    </div>
+
+    <!--Página de las Preguntas Frecuentes-->
+    <div class="container" id="FAQ" style="display: none">
+      <div class="row justify-content-center p-5" id="bgFAQ">
+        <div class="col-8">
+          <h5 class="text-light">PREGUNTAS FRECUENTES</h5>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11">
+          <div id="accordion" role="tablist" class="mt-5">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Pregunta #1
+                  </a>
+                </p>
+              </div>
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingTwo">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Pregunta #2
+                  </a>
+                </p>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique unde ab molestias officia veritatis quis reiciendis velit.
+                  Enim, quasi dolor!
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingThree">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Pregunta #3
+                  </a>
+                </p>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFour">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Pregunta #4
+                  </a>
+                </p>
+              </div>
+              <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFive">
+                <p class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Pregunta #5
+                  </a>
+                </p>
+              </div>
+              <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vero nobis deleniti consequuntur eos optio ea. Dolorem
+                  tempore placeat tenetur.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Página del Saldo-->
+    <div class="container" id="balance" style="display: none">
+      <div class="row">
+        <div class="col-8">
+          <input type="text" id="cardNumber" class="mt-5" placeholder="Número de tarjeta">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-12">
+          <select class="mt-4" name="Tarjetas" id="cards">
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <button type="button" class="btn col-12 text-light btn-warning mt-5 mb-5" onclick="showBalance()">VER SALDO</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mt-5 mb-0" id="title">SALDO TOTAL</p>
+            <h1 class="text-center ml-0 mb-5 p-5" id="askedBalance"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Página de Calcular el Saldo-->
+    <div class="container" id="balanceCalculator" style="display: none">
+      <div class="row">
+        <div class="col-8">
+          <input type="text" id="cardNumberCalculator" class="mt-5" placeholder="Número de tarjeta">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <label for="Tarifa" class="mt-5">Tarifa:</label>
+          <select name="Tarifa" id="rate" onclick="selectedRate()">
+            <option value="">Seleccione tarifa:</option>
+            <option value="760">Horario Alto</option>
+            <option value="680">Horario Medio</option>
+            <option value="630">Horario Bajo</option>
+          </select>
+        </div>
+        <div class="col">
+          <label for="Tarjetas" class="mt-5">Tarjeta:</label>
+          <select name="Tarjetas" id="cardsBalance">
+          </select>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-7">
+          <button type="button" class="btn text-light btn-warning mt-5 mb-5" id="calculate" onclick="bipCalculator()">CALCULAR</button>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mt-5 mb-0" id="cost">COSTO PASAJE</p>
+            <h1 class="text-center ml-0 p-5" id="askedCost"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10">
+          <div class="div">
+            <p class="text-center mb-0 mt-4" id="final">SALDO FINAL</p>
+            <h1 class="text-center ml-0 p-5" id="finalBalance"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script src="src/js/app.js"></script>
+  <script src="src/js/login.js"></script>
+  <script src="src/js/user.js"></script>
+  <script src="src/js/DOM.js"></script>
+</body>
+
+</html>
