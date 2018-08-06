@@ -54,6 +54,7 @@ createNumber = (newNumber) => {
   showCards();
 }
 
+//Muestra las tarjetas impresas en la página
 readCards = () => {
   let number = firebase.database().ref('tarjetas/');
   number.on('child_added', function (data) {
@@ -66,6 +67,7 @@ readCards = () => {
   })
 }
 
+//Muestra las tarjetas impresas en el select
 showCards = () => {
   let number = firebase.database().ref('tarjetas/');
   number.on('child_added', function (data) {
