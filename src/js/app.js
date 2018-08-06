@@ -79,11 +79,10 @@ bipCalculator = () => {
 
   //Sacando el saldo y guardándolo en una función
   let bip = (bipJSON) => {
-    console.log(bipJSON)
     for (let i in bipJSON) {
       let regex = /(\d+)/g;
       let number = bipJSON.saldoTarjeta.match(regex);
-      let balance = parseInt(number[0] += number[1]);
+      let balance = parseInt(number[0] += number[1], 10);
       result(balance);
     }
   }

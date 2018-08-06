@@ -1,5 +1,6 @@
 #authentication{
   background-color: #3E3F41;
+  height: 812px;
 }
 
 #reg, #ini{
@@ -14,6 +15,14 @@
 
 #balance{
   height: 772px;
+}
+
+#FAQ {
+  height:772px;
+}
+
+#bgFAQ{
+  background-color: #E8910C;
 }
 
 .home {
