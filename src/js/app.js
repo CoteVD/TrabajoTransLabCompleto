@@ -1,3 +1,4 @@
+//Llamando a la página Ver Saldo
 goBalance = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'none';
@@ -6,10 +7,11 @@ goBalance = () => {
   balanceCalculator.style.display = 'none';
 }
 
+//Función para ver el saldo en la página
 showBalance = () => {
-    let number = document.getElementById('cardNumber').value;
-    let numberSelect = document.getElementById('cards').value;
-  
+  let number = document.getElementById('cardNumber').value;
+  let numberSelect = document.getElementById('cards').value;
+
   //Haciendo el fetch a la tarjeta ingresada
   fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
@@ -32,7 +34,7 @@ showBalance = () => {
   }
 }
 
-
+//Llamando a la página Calcular Tarifa
 goBalanceCalculator = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'none';
@@ -41,10 +43,31 @@ goBalanceCalculator = () => {
   balanceCalculator.style.display = 'block';
 }
 
+//Muestra las tarjetas impresas en el select para calcular
+showCardsForCalc = () => {
+  let number = firebase.database().ref('tarjetas/');
+  number.on('child_added', function (data) {
+    let numberValue = data.val();
+    document.getElementById('cardsBalance').innerHTML += `
+    <option>${numberValue.number}</option>
+    `
+  })
+}
+
+//Seleccionando la tarifa e imprimiéndola en la página
+selectedRate = () => {
+  const selector = document.getElementById('rate');
+  let value = selector[selector.selectedIndex].value;
+  document.getElementById('askedCost').innerHTML = '$' + value;
+}
+
+//Juntando los datos para meterlos a la formula para calcular el saldo
 bipCalculator = () => {
   let number = document.getElementById('cardNumberCalculator').value;
+  let numberSelect = document.getElementById('cardsBalance').value;
+  let rate = document.getElementById('rate').value;
   //Haciendo el fetch a la tarjeta ingresada
-  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number)
+  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
@@ -62,12 +85,12 @@ bipCalculator = () => {
     }
   }
 
-  //Seleccionando la tarifa
-  selectedRate = () => {
+  //Seleccionando la tarifa e imprimiéndola en la página
+  /*selectedRate = () => {
     const selector = document.getElementById('rate');
     let value = selector[selector.selectedIndex].value;
     document.getElementById('askedCost').innerHTML = '$' + value;
-  }
+  }*/
 
   //Calculando el balance final(no funcional)
   const bipTotal = (bipJSON) => {

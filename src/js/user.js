@@ -52,6 +52,7 @@ createNumber = (newNumber) => {
   document.getElementById('newCards').innerHTML = '';
   readCards();
   showCards();
+  showCardsForCalc();
 }
 
 //Muestra las tarjetas impresas en la página

@@ -1,3 +1,4 @@
+//Llamando a la página Preguntas Frecuentes
 goFAQ = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'none';
@@ -6,6 +7,7 @@ goFAQ = () => {
   balanceCalculator.style.display = 'none';
 }
 
+//Llamando a la página Home
 goButtons = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'block';
