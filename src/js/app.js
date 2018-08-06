@@ -1,16 +1,3 @@
-//Haciendo el fetch a la url
-/*fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=123456')
-  .then(response => response.json())
-  .then(bipJSON => {
-    bip(bipJSON);
-    bipCalculator(bipJSON);
-  })
-  .catch(error => {
-    console.error('Problemas para obtener la información');
-    console.error('Tipo de error: ' + error.stack);
-  });
-*/
-
 goBalance = () => {
   userProfile.style.display = 'none';
   buttons.style.display = 'none';
@@ -20,9 +7,11 @@ goBalance = () => {
 }
 
 showBalance = () => {
-  let number = document.getElementById('cardNumber').value;
+    let number = document.getElementById('cardNumber').value;
+    let numberSelect = document.getElementById('cards').value;
+  
   //Haciendo el fetch a la tarjeta ingresada
-  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number)
+  fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
@@ -69,7 +58,7 @@ bipCalculator = () => {
   //Sacando el saldo y guardándolo en una variable
   const bip = (bipJSON) => {
     for (let i in bipJSON) {
-    let saldo = JSON.stringify(bipJSON['saldoTarjeta']);
+      let saldo = JSON.stringify(bipJSON['saldoTarjeta']);
     }
   }
 

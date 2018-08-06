@@ -15,6 +15,7 @@ window.onload = () => {
     }
   });
   readCards();
+  showCards();
 }
 
 //Función para registrarse en la aplicación

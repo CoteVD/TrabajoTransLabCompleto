@@ -51,6 +51,7 @@ createNumber = (newNumber) => {
   db.set(number);
   document.getElementById('newCards').innerHTML = '';
   readCards();
+  showCards();
 }
 
 readCards = () => {
@@ -61,6 +62,16 @@ readCards = () => {
     <div class="col-10 bg-white mt-2 mb-2">
     <p class="text-center mt-2 mb-2">${numberValue.number}</p>
     </div>
+    `
+  })
+}
+
+showCards = () => {
+  let number = firebase.database().ref('tarjetas/');
+  number.on('child_added', function (data) {
+    let numberValue = data.val();
+    document.getElementById('cards').innerHTML += `
+    <option>${numberValue.number}</option>
     `
   })
 }
