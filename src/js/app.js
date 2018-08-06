@@ -66,41 +66,32 @@ bipCalculator = () => {
   let number = document.getElementById('cardNumberCalculator').value;
   let numberSelect = document.getElementById('cardsBalance').value;
   let rate = document.getElementById('rate').value;
-  //Haciendo el fetch a la tarjeta ingresada
+  //Haciendo el fetch a la tarjeta ingresada para sacar el saldo
   fetch('http://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
-      bipTotal(bipJSON);
     })
     .catch(error => {
       console.error('Problemas para obtener la información');
       console.error('Tipo de error: ' + error.stack);
     });
 
-  //Sacando el saldo y guardándolo en una variable
-  const bip = (bipJSON) => {
+  //Sacando el saldo y guardándolo en una función
+  let bip = (bipJSON) => {
+    console.log(bipJSON)
     for (let i in bipJSON) {
-      let saldo = JSON.stringify(bipJSON['saldoTarjeta']);
+      let regex = /(\d+)/g;
+      let number = bipJSON.saldoTarjeta.match(regex);
+      let balance = parseInt(number[0] += number[1]);
+      result(balance);
     }
   }
 
-  //Seleccionando la tarifa e imprimiéndola en la página
-  /*selectedRate = () => {
-    const selector = document.getElementById('rate');
-    let value = selector[selector.selectedIndex].value;
-    document.getElementById('askedCost').innerHTML = '$' + value;
-  }*/
-
-  //Calculando el balance final(no funcional)
-  const bipTotal = (bipJSON) => {
-    const cardBalance = bipJSON['saldoTarjeta'];
-    /*
-    let interger = parseInt(cardBalance, 10)
-    console.log(interger)
-  }*/
-    const passajeCost = askedCost.value;
-    const result = parseInt(cardBalance - passajeCost);
+  //Función para obtener el saldo final
+  result = (balance) => {
+    let result = balance - rate;
     document.getElementById('finalBalance').innerHTML = '$' + result
   }
 }
+

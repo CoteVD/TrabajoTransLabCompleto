@@ -41,10 +41,10 @@
       </form>
       <div class="row">
         <div class="col-6">
-          <button type="button" class="btn btn-warning p-4" onclick="signIn()">INICIAR SESIÓN</button>
+          <button type="button" class="btn btn-warning p-4" id="ini" onclick="signIn()">INICIAR SESIÓN</button>
         </div>
         <div class="col-6">
-          <button type="button" class="btn btn-warning p-4" onclick="signUp()">REGISTRARSE</button>
+          <button type="button" class="btn btn-warning p-4" id="reg" onclick="signUp()">REGISTRARSE</button>
         </div>
       </div>
     </div>
@@ -88,29 +88,29 @@
 
     <!--Página del Home-->
     <div class="container" id="buttons" style="display: none">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning" onclick="goBalance()">VER SALDO</button>
+          <button type="button" class="btn home text-light btn-warning" id="first" onclick="goBalance()">VER SALDO</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning" onclick="goBalanceCalculator()">CALCULAR TARIFA</button>
+          <button type="button" class="btn home text-light btn-warning" onclick="goBalanceCalculator()">CALCULAR TARIFA</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning" onclick="goUser()">PERFIL</button>
+          <button type="button" class="btn home text-light btn-warning" onclick="goUser()">PERFIL</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning" onclick="goFAQ()">PREGUNTAS FRECUENTES</button>
+          <button type="button" class="btn home text-light btn-warning" onclick="goFAQ()">PREGUNTAS FRECUENTES</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-9">
-          <button type="button" class="btn text-light btn-warning" onclick="logOut()">SALIR</button>
+          <button type="button" class="btn home text-light btn-warning" id="last" onclick="logOut()">SALIR</button>
         </div>
       </div>
     </div>
@@ -248,8 +248,8 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-7">
-          <button type="button" class="btn text-light btn-warning mt-5 mb-5" onclick="showBalance()">VER SALDO</button>
+        <div class="col-10">
+          <button type="button" class="btn col-12 text-light btn-warning mt-5 mb-5" onclick="showBalance()">VER SALDO</button>
         </div>
       </div>
       <div class="row justify-content-center">
@@ -303,7 +303,7 @@
         <div class="col-10">
           <div class="div">
             <p class="text-center mb-0 mt-4" id="final">SALDO FINAL</p>
-            <h1 class="text-center ml-0 mb-5 p-5" id="finalBalance"></h1>
+            <h1 class="text-center ml-0 p-5" id="finalBalance"></h1>
           </div>
         </div>
       </div>

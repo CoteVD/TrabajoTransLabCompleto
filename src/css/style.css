@@ -1,12 +1,37 @@
 #authentication{
   background-color: #3E3F41;
-  width: 100%;
 }
 
-.btn{
+#reg, #ini{
   width:100%;
   margin-top: 60px;
   margin-bottom: 125px;
+}
+
+#userProfile {
+  height: 772px;
+}
+
+#balance{
+  height: 772px;
+}
+
+.home {
+  width:100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#first{
+  margin-top:170px;
+}
+
+#last{
+  margin-bottom:252px;
+}
+
+#finalBalance{
+  margin-bottom: 106px;
 }
 
 #email, #password {
