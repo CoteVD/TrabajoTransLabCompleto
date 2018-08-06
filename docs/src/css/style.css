@@ -1,0 +1,110 @@
+#authentication{
+  background-color: #3E3F41;
+  height: 812px;
+}
+
+#reg, #ini{
+  width:100%;
+  margin-top: 60px;
+  margin-bottom: 125px;
+}
+
+#buttons{
+  height:772px;
+}
+
+#userProfile {
+  height: 772px;
+}
+
+#balance{
+  height: 772px;
+}
+
+#FAQ {
+  height:772px;
+}
+
+#bgFAQ{
+  background-color: #E8910C;
+}
+
+.fas{
+  color: #E8910C;
+}
+
+.home {
+  width:100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#firstBtn{
+  margin-top:170px;
+}
+
+#finalBalance{
+  margin-bottom: 106px;
+}
+
+#email, #password {
+  padding: 30px;
+}
+
+h1{
+  color: #E8910C;
+  text-align: center;
+  margin-left: 55px;
+}
+
+img {
+  margin-top: 130px;
+}
+
+#navbarBar {
+  background-color: #3E3F41;
+}
+
+.collapse {
+  background-color: white;
+}
+
+#pageContent {
+  background-color:#DDDEE0;
+}
+
+#profilePhotoContainer {
+  background-color: #E8910C;
+}
+
+#profilePhoto {
+  border-radius: 200px;
+}
+
+#newCardNumber, #cardNumber, #cardNumberCalculator {
+  border: none;
+  background-color:#DDDEE0; 
+}
+
+select {
+  width: 100%;
+}
+
+#title, #cost, #final {
+  background-color: #3E3F41;
+  color: white;
+}
+
+#askedBalance, #askedCost, #finalBalance {
+  background-color: #E8910C;
+  color: white;
+  font-weight: 700;
+}
+
+#showBalance {
+  width: 100%;
+}
+
+#calculate {
+  width: 100%;
+}
