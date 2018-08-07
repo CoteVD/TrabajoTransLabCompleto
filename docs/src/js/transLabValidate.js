@@ -30,7 +30,7 @@ window.validateEmail = function (email) {
 window.validatePassword = (password) => {
     if (password.toString().length <= 8 && password.toString().length >= 6) {
         if (isNaN(password) == false) {
-            if (!password.toString().trim() == " ") {
+            if (!password.toString().trim() === " ") {
                 return true;
             } else {
                 return false;
