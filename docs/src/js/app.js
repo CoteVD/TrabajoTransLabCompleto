@@ -9,11 +9,11 @@ goBalance = () => {
 
 //Función para ver el saldo en la página
 showBalance = () => {
-  let number = document.getElementById('cardNumber').value;
-  let numberSelect = document.getElementById('cards').value;
+  let numbers = document.getElementById('cardNumber').value;
+  let numberSelects = document.getElementById('cards').value;
 
   //Haciendo el fetch a la tarjeta ingresada
-  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
+  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + numbers + numberSelects)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
