@@ -28,9 +28,9 @@ window.validateEmail = function (email) {
 
 //Validando Password
 window.validatePassword = (password) => {
-    if (password.toString().length <= 8 && password.toString().length >= 6) {
-        if (isNaN(password) == false) {
-            if (!password.toString().trim() === " ") {
+    if (password.toString().length >= 6 && password.toString().length <= 8) {
+        if (isNaN(password) === false) {
+            if (password.toString().trim() !== " ") {
                 return true;
             } else {
                 return false;

@@ -9,11 +9,11 @@ goBalance = () => {
 
 //Función para ver el saldo en la página
 showBalance = () => {
-  let numbers = document.getElementById('cardNumber').value;
-  let numberSelects = document.getElementById('cards').value;
+  let number = document.getElementById('cardNumber').value;
+  let numberSelect = document.getElementById('cards').value;
 
   //Haciendo el fetch a la tarjeta ingresada
-  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + numbers + numberSelects)
+  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
     .then(response => response.json())
     .then(bipJSON => {
       bip(bipJSON);
@@ -66,35 +66,31 @@ bipCalculator = () => {
   let number = document.getElementById('cardNumberCalculator').value;
   let numberSelect = document.getElementById('cardsBalance').value;
   let rate = document.getElementById('rate').value;
-  if (number, numberSelect, rate !== '') {
-    //Haciendo el fetch a la tarjeta ingresada para sacar el saldo
-    fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
-      .then(response => response.json())
-      .then(bipJSON => {
-        bip(bipJSON);
-      })
-      .catch(error => {
-        console.error('Problemas para obtener la información');
-        console.error('Tipo de error: ' + error.stack);
-      });
+  //Haciendo el fetch a la tarjeta ingresada para sacar el saldo
+  fetch('https://bip-servicio.herokuapp.com/api/v1/solicitudes.json?bip=' + number + numberSelect)
+    .then(response => response.json())
+    .then(bipJSON => {
+      bip(bipJSON);
+    })
+    .catch(error => {
+      console.error('Problemas para obtener la información');
+      console.error('Tipo de error: ' + error.stack);
+    });
 
-    //Sacando el saldo y guardándolo en una función
-    let bip = (bipJSON) => {
-      for (let i in bipJSON) {
-        let regex = /(\d+)/g;
-        let number = bipJSON.saldoTarjeta.match(regex);
-        let balance = parseInt(number[0] += number[1], 10);
-        result(balance);
-      }
+  //Sacando el saldo y guardándolo en una función
+  let bip = (bipJSON) => {
+    for (let i in bipJSON) {
+      let regex = /(\d+)/g;
+      let number = bipJSON.saldoTarjeta.match(regex);
+      let balance = parseInt(number[0] += number[1], 10);
+      result(balance);
     }
+  }
 
-    //Función para obtener el saldo final
-    result = (balance) => {
-      let result = balance - rate;
-      document.getElementById('finalBalance').innerHTML = '$' + result
-    }
-  } else {
-    alert('Debe rellenar todos los campos.')
+  //Función para obtener el saldo final
+  result = (balance) => {
+    let result = balance - rate;
+    document.getElementById('finalBalance').innerHTML = '$' + result
   }
 }
 
