@@ -1,6 +1,8 @@
 # TrabajoTransLabCompleto
 ## Descripción
 Aplicación que permite consultar el saldo que tiene la tarjeta Bip! ingresada. También permite ver cuánto saldo quedará después de restar las distintas tarifas por horarios.
+## Ejemplos del programa
+![imagen]()![imagen]()
 ## Instrucciones
 1. Ingresar a la aplicación
 2. Ingresar a ver saldo y en el input poner el número de la tarjeta a consultar. Apretar el botón ver saldo.
