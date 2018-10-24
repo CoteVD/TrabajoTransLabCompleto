@@ -1,4 +1,4 @@
-# TrabajoTransLabCompleto
+# TransLab
 ## Descripción
 Aplicación que permite consultar el saldo que tiene la tarjeta Bip! ingresada. También permite ver cuánto saldo quedará después de restar las distintas tarifas por horarios.
 ## Ejemplos del programa
